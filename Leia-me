@@ -1,0 +1,15 @@
+Passo a passo da configuração.
+
+1 - Em sua virtual env rode o comando pip install -r requirements.txt para adicionar as bibliotecas necessárias a sua virtual env.
+2 - Segundo faça as configurações que estão no arquivo settings.py.
+3 - Execute o comando 'python manage.py migrate'.
+4 - Execute o comendo 'python manage.py createsuperuser'.
+ 4.1 - crie um super usuário e suas credenciais de acesso como login e senha.
+5 - Faças as configurações como são mostradas no arquivo urls.py.
+6 - Execute o comando 'python manage.py runserver'.
+  6.1 - Após ativar o servidor acesso o admin 'http://127.0.0.1:8000/admin/'.
+  6.2 - Faça o login, vá até o menu 'TOTP devices' e adicione um device em 'ADD TOTP devices'.
+  6.3 - Após adicionar um device visualize os devices existentes e click no link 'qrcode' e faça o cadastro no autenticador de sua escolha, como google authetication ou watchGuard por exemplo.
+  6.4 - Feito isso pode sair do django admin.
+7 - No arquivo de urls.py substitua o path 'path('admin/', admin.site.urls),' por este 'path('admin/', admin_site.urls),'.
+8 - Então ative o servidor novamente e tente antra no admim do django e verá que agora exibe um local aguardando seu segundo fator de autenticação para se logar.
